@@ -1,0 +1,73 @@
+{{ define "index" }}
+    <main>
+        <section class="page page-1">Some Shit 21
+            <div class="box">Stuff</div>
+            <div class="shit">
+                <div class="item">Thing 1</div>
+                <div class="item">Thing 2</div>
+                <div class="item">Thing 3</div>
+                <div class="item">Thing 4</div>
+                <div class="item">Thing 5</div>
+            </div>
+        </section>
+        <section class="page page-2">Some Shit</section>
+        <section class="page page-3">Some Shit</section>
+        <section class="page page-4">Some Shit</section>
+        <section class="page page-5">Some Shit</section>
+        <section class="page page-6">Some Shit</section>
+        <section class="page page-7">Some Shit</section>
+        <section class="page page-8">Some Shit</section>
+        <style>
+            html, body { margin: 0; padding: 0; }
+            @page {
+                height: 11in;
+                width: 8in;
+            }
+
+            .page {
+                page-break-after: always;
+                height: 100vh;
+                width: 100vw;
+            }
+
+            .shit {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .item {
+                height: 100px;
+                width: 100px;
+                background-color: blue;
+            }
+
+            .item:nth-child(n) {
+                filter: hue-rotate(calc(n * 30deg));
+            }
+
+
+
+            .box {
+                box-shadow: 0 0 5px whitesmoke;
+                border: 1px solid whitesmoke;
+                padding: 1rem 2rem;
+            }
+            
+            @media print {
+                .page {
+                    background: black;
+                    color: red;
+                }
+            }
+            .page-1 { background-image: linear-gradient(to top right, springgreen, yellow);}
+            .page-2 { background-image: linear-gradient(to top right, springgreen, blue );}
+            .page-3 { background-image: linear-gradient(to top right, springgreen, navy );}
+            .page-4 { background-image: linear-gradient(to top right, springgreen, cyan );}
+            .page-5 { background-image: linear-gradient(to top right, springgreen, purple);}
+            .page-6 { background-image: linear-gradient(to top right, springgreen, black);}
+            .page-7 { background-image: linear-gradient(to top right, springgreen, white);}
+            .page-8 { background-image: linear-gradient(to top right, springgreen, teal); }
+        </style>
+    </main>
+{{ end }}
